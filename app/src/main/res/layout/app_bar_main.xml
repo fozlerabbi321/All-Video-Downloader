@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/colorPrimary"
+
+            android:weightSum="1"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1.56"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/SearchText"
+                    android:layout_width="440dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_corner"
+                    android:dropDownWidth="match_parent"
+                    android:hint="Search or Enter URL"
+                    android:maxLines="2"
+
+                    android:nextFocusLeft="@id/SearchText"
+
+                    android:nextFocusUp="@id/SearchText"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+
+                    android:selectAllOnFocus="true"
+                    android:singleLine="true"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/text_hint" />
+
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/adViewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="top"
+        android:layout_marginTop="56dp"
+
+        >
+
+        <RelativeLayout
+            android:id="@+id/Ad_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="0dp"
+            android:textAlignment="center" />
+        <!-- view for AdMob Banner Ad -->
+        <!--<com.google.android.gms.ads.AdView-->
+            <!--android:id="@+id/adView"-->
+            <!--android:visibility="gone"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--ads:adSize="BANNER"-->
+            <!--ads:adUnitId="@string/banner_home_footer">-->
+            <!---->
+        <!--</com.google.android.gms.ads.AdView>-->
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp">
+
+        <include
+            android:id="@+id/webViewCon"
+            layout="@layout/content_main"
+            android:visibility="gone" />
+
+        <include layout="@layout/home_layout"   />
+
+
+    </RelativeLayout>
+
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_marginBottom="@dimen/fab_bottom_margin"
+        app:srcCompat="@drawable/ic_file_download_white_24dp" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
